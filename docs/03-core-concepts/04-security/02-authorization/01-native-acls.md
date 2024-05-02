@@ -13,7 +13,7 @@ For Ranger ACL documentation, please refer to this [page](02-ranger-acls.md).
 
 ## Pre-Requisites
 
-A basic understanding of Ozone concepts such as Ozone namespace (e.g. volume, bucket, and key) is required. It is also recommended to have some knowledge in POSIX and S3 permission model. Please refer to the relevant documentations to get familiar with these concepts.
+A basic understanding of Ozone concepts such as Ozone namespace objects (e.g. volume, bucket, and key) is required. It is also recommended to have some knowledge in POSIX and S3 permission model. Please refer to the relevant documentations to get familiar with these concepts.
 
 ## Overview
 
@@ -109,7 +109,7 @@ Please refer to the access matrix for all the required ACLs for different reques
 
 ## Ozone Native ACL Permission Model
 
-Ozone ACL are one of the resource-based authorization model which can be used to manage access to objects in the Ozone cluster.
+Ozone ACL are one of the resource-based authorization models which can be used to manage access to objects in the Ozone cluster.
 
 ### Authenticating Request
 
@@ -126,9 +126,18 @@ A S3 user accessing Ozone via AWS v3 signature protocol will be translated to th
 
 ### ACL Inheritance
 
+### ACL initial ACLs
+
 ### ACL Permission Flowchart
 
 ## Usage
+
+To enable Ozone Native ACL, add the following properties to the `ozone-site.xml`.
+
+| Property                   | Value                                                      |
+| -------------------------- | ---------------------------------------------------------- |
+| ozone.acl.enabled	         | true                                                       |
+| ozone.acl.authorizer.class | org.apache.hadoop.ozone.security.acl.OzoneNativeAuthorizer |
 
 ### CLI
 
